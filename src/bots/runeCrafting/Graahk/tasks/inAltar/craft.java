@@ -87,10 +87,13 @@ public class craft extends Strategy implements Task {
                         Tabs.EQUIPMENT.open();
                         Time.sleep(150);
                     }
-                    ring.click(false);
-                    Time.sleep(200, 300);
-                    Menu.select("Castle Wars");
-                    Time.sleep(600, 700);
+                    if (ring.click(false)) {
+                        Time.sleep(100, 350);
+                        if (Menu.isOpen()) {
+                            Menu.select("Castle Wars");
+                            Time.sleep(200, 400);
+                        }
+                    }
                     Tabs.INVENTORY.open();
                     Variables.RESET_VARIABLES();
                     Time.sleep(2500);
