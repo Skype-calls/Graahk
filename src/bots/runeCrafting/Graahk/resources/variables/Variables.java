@@ -25,5 +25,6 @@ public class Variables {
         EMPTY_LARGE = false;
         EMPTY_GIANT = false;
         EMPTY_NEXT = false;
+        TIME_TO_TELE = false;
     }
 }
