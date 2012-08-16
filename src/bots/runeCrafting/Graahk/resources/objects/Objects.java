@@ -38,4 +38,14 @@ public class Objects {
             }
         });
     }
+    
+    public static SceneObject getChest() {
+        return SceneEntities.getNearest(new Filter<SceneObject>() {
+
+            @Override
+            public boolean accept(SceneObject loc) {
+                return loc != null && loc.getId() == 4483;
+            }
+        });
+    }
 }
