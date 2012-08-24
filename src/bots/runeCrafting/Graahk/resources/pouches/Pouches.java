@@ -11,27 +11,27 @@ import org.powerbot.game.api.methods.Settings;
  */
 public class Pouches {
 
-    public boolean allEmpty() {
+    public static boolean allEmpty() {
         return Settings.get(486) == 1073741824 && Settings.get(720) == 0;
     }
 
-    public boolean smallEmpty() {
+    public static boolean smallEmpty() {
         return smallCount() == 0 && smallEssType() == null;
     }
 
-    public boolean medEmpty() {
+    public static boolean medEmpty() {
         return medCount() == 0 && medEssType() == null;
     }
 
-    public boolean largeEmpty() {
+    public static boolean largeEmpty() {
         return largeCount() == 0 && largeEssType() == null;
     }
 
-    public boolean giantEmpty() {
+    public static boolean giantEmpty() {
         return Settings.get(720) < 64 && giantCount() == 0 && giantEssType() == null;
     }
 
-    public int smallCount() {
+    public static int smallCount() {
         int count = Settings.get(486) - 1073741824;
         if (count >= 4608) {
             count %= 262144;
@@ -45,7 +45,7 @@ public class Pouches {
         return count;
     }
 
-    public int medCount() {
+    public static int medCount() {
         int count = Settings.get(486) - 1073741824;
         if (count >= 4608) {
             count %= 262144;
@@ -56,7 +56,7 @@ public class Pouches {
         return count / 8;
     }
 
-    public int largeCount() {
+    public static int largeCount() {
         int count = Settings.get(486) - 1073741824;
         if (count >= 4608) {
             count %= 262144;
@@ -64,11 +64,11 @@ public class Pouches {
         return count / 512;
     }
 
-    public int giantCount() {
+    public static int giantCount() {
         return (Settings.get(486) - 1073741824) / 262144;
     }
 
-    public String smallEssType() {
+    public static String smallEssType() {
         int type = Settings.get(720);
         if (type >= 64) {
             type %= 64;
@@ -86,7 +86,7 @@ public class Pouches {
         return type == 1 ? " Rune " : type == 2 ? " Pure " : null;
     }
 
-    public String medEssType() {
+    public static String medEssType() {
         int type = Settings.get(720);
         if (type >= 64) {
             type %= 64;
@@ -97,7 +97,7 @@ public class Pouches {
         return type >= 4 && type < 9 ? " Rune " : type >= 9 ? " Pure " : null;
     }
 
-    public String largeEssType() {
+    public static String largeEssType() {
         int type = Settings.get(720);
         if (type >= 64) {
             type %= 64;
@@ -105,7 +105,7 @@ public class Pouches {
         return type >= 16 && type < 32 ? " Rune " : type >= 32 ? " Pure " : null;
     }
 
-    public String giantEssType() {
+    public static String giantEssType() {
         return Settings.get(720) >= 64 && Settings.get(720) < 128 ? " Rune " : Settings.get(720) >= 128 ? " Pure " : null;
     }
 }

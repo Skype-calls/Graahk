@@ -14,6 +14,11 @@ import org.powerbot.game.api.wrappers.node.Item;
 public class Variables {
 
     public static String state = "Doing Nothing";
+    
+    /*
+     * Withdraw Dueling Ring
+     */
+    public static boolean NEED_RING = false;
     /*
      * Teleport To Castle Wars
      */
@@ -22,6 +27,11 @@ public class Variables {
      * Empty Pouches
      */
     public static boolean EMPTY_MASSIVE, EMPTY_MEDIUM, EMPTY_GIANT, EMPTY_LARGE, EMPTY_NEXT = false;
+    
+    /*
+     * Filling Pouches
+     */
+    public static boolean FILLING_MASSIVE, FILLING_MEDIUM, FILLING_GIANT, FILLING_LARGE, FILLING_NEXT = false;
     
     /*
      * Filling Pouches
@@ -38,6 +48,12 @@ public class Variables {
         EMPTY_GIANT = false;
         EMPTY_NEXT = false;
         TIME_TO_TELE = false;
+        FILLING_MASSIVE = false;
+        FILLING_MEDIUM = false;
+        FILLING_GIANT = false;
+        FILLING_LARGE = false;
+        FILLING_NEXT = false;
+        HAVE_FILLED = false;
     }
 
     /*

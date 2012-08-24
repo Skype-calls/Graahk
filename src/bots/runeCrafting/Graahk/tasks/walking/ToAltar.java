@@ -52,10 +52,8 @@ public class ToAltar extends Strategy implements Task, Condition {
                             Variables.state = "Clicked ruins, adjusting camera!";
                             Camera.setPitch(95);
                             t.reset();
-                            while (t.isRunning()
-                                    && Players.getLocal().getAnimation() == -1
-                                    && !Areas.at(Areas.ALTAR)) {
-                                if (Players.getLocal().getSpeed() > 0) {
+                            while (t.isRunning() && !Areas.at(Areas.ALTAR)) {
+                                if (Players.getLocal().isMoving()) {
                                     t.reset();
                                 }
                                 Time.sleep(50);
